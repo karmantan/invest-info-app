@@ -1,0 +1,31 @@
+ticker,isin,name,category,asset_class,tax_class,ter,spread_pct,distributing,tags,description
+EUNL.DE,IE00B4L5Y983,iShares Core MSCI World (Acc),Broad world,equity,equity,0.0020,0.0005,0,world;us;developed,"About 1,400 large companies from 23 developed countries. The classic one-fund core holding."
+VWCE.DE,IE00BK5BQT80,Vanguard FTSE All-World (Acc),Broad world,equity,equity,0.0022,0.0006,0,world;us;developed;em,"About 3,900 companies from developed and emerging countries — the whole world stock market in one fund."
+SXR8.DE,IE00B5BMR087,iShares Core S&P 500 (Acc),USA,equity,equity,0.0007,0.0005,0,us,The 500 largest US companies. Very cheap and very liquid.
+SXRV.DE,IE00B53SZB19,iShares Nasdaq 100 (Acc),USA,equity,equity,0.0033,0.0010,0,us;tech,"The 100 largest non-financial Nasdaq companies — heavy in big tech (Apple, Microsoft, Nvidia)."
+IS3N.DE,IE00BKM4GZ66,iShares Core MSCI EM IMI (Acc),Emerging markets,equity,equity,0.0018,0.0010,0,em,"Companies from emerging economies such as China, India, Taiwan and Brazil."
+SMEA.DE,IE00B4K48X80,iShares Core MSCI Europe (Acc),Europe,equity,equity,0.0012,0.0010,0,europe,About 400 large and mid-sized European companies.
+EXS1.DE,DE0005933931,iShares Core DAX (DE),Europe,equity,equity,0.0016,0.0008,0,europe;germany,The 40 largest German companies.
+EXW1.DE,DE0005933956,iShares Core EURO STOXX 50 (DE),Europe,equity,equity,0.0010,0.0008,1,europe,The 50 largest companies in the eurozone.
+IUSN.DE,IE00BF4RFH31,iShares MSCI World Small Cap (Acc),Factor / style,equity,equity,0.0035,0.0015,0,world;smallcap,"Thousands of smaller companies across developed countries — a diversifier next to big-company funds."
+IS3Q.DE,IE00BP3QZ601,iShares Edge MSCI World Quality Factor (Acc),Factor / style,equity,equity,0.0025,0.0015,0,world;us;developed,"World companies with high profitability, stable earnings and low debt."
+IS3S.DE,IE00BP3QZB59,iShares Edge MSCI World Value Factor (Acc),Factor / style,equity,equity,0.0025,0.0015,0,world;value,World companies that look cheap relative to their earnings and assets.
+IS3R.DE,IE00BP3QZ825,iShares Edge MSCI World Momentum Factor (Acc),Factor / style,equity,equity,0.0025,0.0015,0,world;us;tech,World companies whose share prices have risen most over the past year.
+ISPA.DE,DE000A0F5UH1,iShares STOXX Global Select Dividend 100 (DE),Factor / style,equity,equity,0.0046,0.0020,1,world;dividend,100 high-dividend companies worldwide. Pays out income every quarter.
+QDVE.DE,IE00B3WJKG14,iShares S&P 500 Information Technology Sector (Acc),Sector,equity,equity,0.0015,0.0015,0,us;tech,US technology companies from the S&P 500 (software and chips).
+XDWT.DE,IE00BM67HT60,Xtrackers MSCI World Information Technology (Acc),Sector,equity,equity,0.0025,0.0015,0,world;tech,Technology companies across developed countries.
+XDWH.DE,IE00BM67HK77,Xtrackers MSCI World Health Care (Acc),Sector,equity,equity,0.0025,0.0015,0,world;health,"Healthcare companies worldwide — pharma, medical devices and insurers."
+XDWF.DE,IE00BM67HL84,Xtrackers MSCI World Financials (Acc),Sector,equity,equity,0.0025,0.0015,0,world;financials,"Banks, insurers and other financial companies worldwide."
+XDW0.DE,IE00BM67HM91,Xtrackers MSCI World Energy (Acc),Sector,equity,equity,0.0025,0.0020,0,world;energy,Oil and gas companies worldwide.
+2B70.DE,IE00BYXG2H39,iShares Nasdaq US Biotechnology (Acc),Theme,equity,equity,0.0035,0.0025,0,us;health;biotech,US biotechnology companies. Big swings in both directions.
+XAIX.DE,IE00BGV5VN51,Xtrackers Artificial Intelligence & Big Data (Acc),Theme,equity,equity,0.0035,0.0020,0,world;tech,Companies that develop or heavily use AI and big-data technology.
+2B76.DE,IE00BYZK4552,iShares Automation & Robotics (Acc),Theme,equity,equity,0.0040,0.0025,0,world;tech,Companies building robots and factory automation.
+DFEN.DE,IE000YYE6WK5,VanEck Defense (Acc),Theme,equity,equity,0.0055,0.0030,0,world;defense,Defence and military equipment companies.
+IQQH.DE,IE00B1XNHC34,iShares Global Clean Energy (Dist),Theme,equity,equity,0.0065,0.0030,1,world;cleanenergy,"Solar, wind and other clean-energy companies. Very volatile."
+IQQQ.DE,IE00B1TXK627,iShares Global Water (Dist),Theme,equity,equity,0.0065,0.0030,1,world;utilities,Water utilities and water-technology companies.
+QDV5.DE,IE00BZCQB185,iShares MSCI India (Acc),Emerging markets,equity,equity,0.0065,0.0025,0,em;india,Large and mid-sized Indian companies.
+IQQP.DE,IE00B0M63284,iShares European Property Yield (Dist),Real estate,equity,equity,0.0040,0.0025,1,europe;realestate,Listed European real-estate companies. Pays rental income out as dividends.
+EUNH.DE,IE00B4WXJJ64,iShares Core € Govt Bond (Dist),Bonds,bond,bond,0.0007,0.0008,1,bonds,"Loans to eurozone governments (Germany, France, Italy …). Calmer than stocks, sensitive to interest rates."
+EUN5.DE,IE00B3F81R35,iShares Core € Corp Bond (Dist),Bonds,bond,bond,0.0009,0.0010,1,bonds,Loans to large European companies. A bit more yield than government bonds.
+XEON.DE,LU0290358497,Xtrackers II EUR Overnight Rate Swap (Acc),Cash-like,money,bond,0.0010,0.0002,0,cash,"Earns roughly the ECB overnight interest rate. Almost no ups and downs — a parking place, not a growth investment."
+4GLD.DE,DE000A0S9GB0,Xetra-Gold (ETC),Gold,gold,gold_etc,0.0030,0.0010,0,gold,"Backed by physical gold in a Frankfurt vault. Gains are tax-free in Germany after holding for more than one year."

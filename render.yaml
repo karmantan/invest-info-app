@@ -1,0 +1,28 @@
+# Render Blueprint for the Quiet Capital website.
+# Render dashboard → New → Blueprint → pick this repository. You will be asked for APP_PASSWORD.
+services:
+  - type: web
+    name: quiet-capital
+    runtime: python
+    region: frankfurt
+    # The persistent disk (your uploaded statement, settings, price cache) needs a paid instance.
+    # On the free plan, delete the `disk:` block and set INVEST_DATA_DIR to /tmp/quiet-capital:
+    # it then sleeps when idle and forgets uploads on every restart or deploy.
+    plan: starter
+    buildCommand: pip install --upgrade pip && pip install .
+    startCommand: python -m streamlit run webapp/app.py --server.port $PORT --server.address 0.0.0.0
+    healthCheckPath: /_stcore/health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: APP_PASSWORD
+        sync: false
+      - key: REQUIRE_APP_PASSWORD
+        value: "1"
+      - key: INVEST_DATA_DIR
+        value: /var/data
+    disk:
+      name: quiet-capital-data
+      mountPath: /var/data
+      sizeGB: 1
