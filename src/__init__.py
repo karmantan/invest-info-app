@@ -1,0 +1,2 @@
+"""Investment research application."""
+

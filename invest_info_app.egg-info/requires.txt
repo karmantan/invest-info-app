@@ -1,0 +1,14 @@
+streamlit<2,>=1.37
+pandas<3,>=2.1
+numpy<3,>=1.26
+scikit-learn<2,>=1.4
+pyarrow<20,>=15
+PyYAML<7,>=6
+pypdf<6,>=4
+requests<3,>=2.31
+plotly<7,>=5.20
+yfinance<2,>=0.2.65
+exchange-calendars<5,>=4.8
+
+[dev]
+pytest<9,>=8

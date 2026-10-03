@@ -1,0 +1,70 @@
+app:
+  currency: EUR
+  principal_benchmark: SPY
+  secondary_benchmark: URTH
+  deterministic_seed: 42
+  demo_mode: false
+  nominal_test_allocation_eur: 1000
+portfolio:
+  minimum_trade_eur: 100
+  maximum_position_weight: 0.15
+  maximum_sector_weight: 0.25
+  tactical_sleeve_weight: 0.08
+  medium_long_tilt_weight: 0.15
+  passive_core_floor: 0.70
+  reconciliation_amber_days: 30
+  reconciliation_red_days: 60
+risk:
+  downside_lambda: 2.0
+  minimum_training_observations: 252
+  minimum_analogue_observations: 20
+  maximum_annualized_volatility: 0.45
+  maximum_probability_loss_5pct: 0.20
+  minimum_expected_excess_return: 0.01
+  minimum_confidence_for_action: 0.60
+costs:
+  buy_fee_eur: 1.0
+  sell_fee_eur: 1.0
+  estimated_spread_bps: 10
+  estimated_benchmark_spread_bps: 10
+tax:
+  capital_gains_rate: 0.25
+  solidarity_surcharge_rate: 0.055
+  church_tax_rate: 0.0
+  etf_partial_exemption_rate: 0.30
+  annual_saver_allowance_eur: 1000
+targets:
+  rolling_12m_base_eur: 3500
+  reasonable_low_eur: 3000
+  reasonable_high_eur: 4000
+  stretch_eur: 6000
+universe:
+  - ticker: SPY
+    name: S&P 500 ETF
+    sector: Broad market
+  - ticker: URTH
+    name: MSCI World ETF
+    sector: Broad market
+  - ticker: SMH
+    name: Semiconductor ETF
+    sector: Semiconductors
+  - ticker: XBI
+    name: Biotechnology ETF
+    sector: Biotechnology
+  - ticker: XLE
+    name: Energy ETF
+    sector: Energy
+  - ticker: XLK
+    name: US Technology ETF
+    sector: Technology
+  - ticker: EEM
+    name: Emerging Markets ETF
+    sector: Emerging markets
+research_proxies:
+  SPY: {represents: "S&P 500 exposure", actual_instrument: null}
+  URTH: {represents: "MSCI World exposure", actual_instrument: null}
+  XLK: {represents: "US technology exposure", actual_instrument: null}
+  SMH: {represents: "semiconductor exposure", actual_instrument: null}
+  XBI: {represents: "biotechnology exposure", actual_instrument: null}
+  XLE: {represents: "energy exposure", actual_instrument: null}
+  EEM: {represents: "emerging-markets exposure", actual_instrument: null}

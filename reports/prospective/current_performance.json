@@ -1,0 +1,21 @@
+{
+  "experiment_id": "prospective-paper-a1a8c1c4f515",
+  "mode": "prospective_paper_only",
+  "completed_paper_trades": 0,
+  "currently_open": 4,
+  "gross_return": null,
+  "net_simulated_return": null,
+  "spy_return": null,
+  "urth_return": null,
+  "excess_spy": null,
+  "excess_urth": null,
+  "win_rate": null,
+  "benchmark_outperformance_rate": null,
+  "p10": null,
+  "maximum_drawdown": null,
+  "spy_maximum_drawdown": null,
+  "urth_maximum_drawdown": null,
+  "turnover": 0,
+  "simulated_costs_eur": 0.0,
+  "small_sample_warning": "Fewer than 20 completed paper trades; no confidence inference is permitted."
+}

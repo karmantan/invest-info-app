@@ -1,0 +1,154 @@
+ticker,friendly_name,region,sector_theme,asset_class,currency,benchmark_category,launch_date,research_proxy_status,structure
+VOO,US Large Caps,United States,Broad Market,Equity,USD,US Large Cap,2010-09-07,US-listed research proxy,ordinary ETF
+IVV,US Large Caps,United States,Broad Market,Equity,USD,US Large Cap,2000-05-15,US-listed research proxy,ordinary ETF
+VTI,Total US Stock Market,United States,Broad Market,Equity,USD,US Total Market,2001-05-24,US-listed research proxy,ordinary ETF
+QQQ,Nasdaq 100,United States,Technology,Equity,USD,US Large Growth,1999-03-10,US-listed research proxy,ordinary ETF
+DIA,Dow Jones Industrials,United States,Broad Market,Equity,USD,US Large Value,1998-01-14,US-listed research proxy,ordinary ETF
+IWF,US Large-Cap Growth,United States,Growth,Equity,USD,US Large Growth,2000-05-22,US-listed research proxy,ordinary ETF
+IWD,US Large-Cap Value,United States,Value,Equity,USD,US Large Value,2000-05-22,US-listed research proxy,ordinary ETF
+RSP,Equal-Weight S&P 500,United States,Broad Market,Equity,USD,US Large Cap,2003-04-24,US-listed research proxy,ordinary ETF
+VUG,US Growth,United States,Growth,Equity,USD,US Large Growth,2004-01-26,US-listed research proxy,ordinary ETF
+VTV,US Value,United States,Value,Equity,USD,US Large Value,2004-01-26,US-listed research proxy,ordinary ETF
+VO,US Mid Caps,United States,Mid Caps,Equity,USD,US Mid Cap,2004-01-26,US-listed research proxy,ordinary ETF
+IJH,US Mid Caps,United States,Mid Caps,Equity,USD,US Mid Cap,2000-05-22,US-listed research proxy,ordinary ETF
+MDY,S&P MidCap 400,United States,Mid Caps,Equity,USD,US Mid Cap,1995-05-04,US-listed research proxy,ordinary ETF
+IWR,Russell Mid-Cap,United States,Mid Caps,Equity,USD,US Mid Cap,2001-07-17,US-listed research proxy,ordinary ETF
+VB,US Small Caps,United States,Small Caps,Equity,USD,US Small Cap,2004-01-26,US-listed research proxy,ordinary ETF
+IJR,S&P Small-Cap 600,United States,Small Caps,Equity,USD,US Small Cap,2000-05-22,US-listed research proxy,ordinary ETF
+IWM,Russell 2000,United States,Small Caps,Equity,USD,US Small Cap,2000-05-22,US-listed research proxy,ordinary ETF
+IWN,US Small-Cap Value,United States,Small Caps,Equity,USD,US Small Value,2000-07-24,US-listed research proxy,ordinary ETF
+IWO,US Small-Cap Growth,United States,Small Caps,Equity,USD,US Small Growth,2000-07-24,US-listed research proxy,ordinary ETF
+VT,Global Equities,Global,Broad Market,Equity,USD,Global Equity,2008-06-24,US-listed research proxy,ordinary ETF
+ACWI,Global Equities,Global,Broad Market,Equity,USD,Global Equity,2008-03-26,US-listed research proxy,ordinary ETF
+VEA,Developed Markets,Developed Markets,Broad Market,Equity,USD,Developed Markets,2007-07-20,US-listed research proxy,ordinary ETF
+IEFA,Developed Markets,Developed Markets,Broad Market,Equity,USD,Developed Markets,2012-10-18,US-listed research proxy,ordinary ETF
+EFA,Developed Markets,Developed Markets,Broad Market,Equity,USD,Developed Markets,2001-08-14,US-listed research proxy,ordinary ETF
+SCHF,Developed Markets,Developed Markets,Broad Market,Equity,USD,Developed Markets,2009-11-03,US-listed research proxy,ordinary ETF
+IEMG,Emerging Markets,Emerging Markets,Broad Market,Equity,USD,Emerging Markets,2012-10-18,US-listed research proxy,ordinary ETF
+VWO,Emerging Markets,Emerging Markets,Broad Market,Equity,USD,Emerging Markets,2005-03-04,US-listed research proxy,ordinary ETF
+SCHE,Emerging Markets,Emerging Markets,Broad Market,Equity,USD,Emerging Markets,2010-01-14,US-listed research proxy,ordinary ETF
+EWJ,Japan Equities,Japan,Broad Market,Equity,USD,Japan,1996-03-12,US-listed research proxy,ordinary ETF
+DXJ,Japan Hedged Equities,Japan,Broad Market,Equity,USD,Japan Hedged,2006-06-16,US-listed research proxy,ordinary ETF
+EWG,Germany Equities,Europe,Broad Market,Equity,USD,Germany,1996-03-12,US-listed research proxy,ordinary ETF
+EWU,United Kingdom Equities,Europe,Broad Market,Equity,USD,United Kingdom,1996-03-12,US-listed research proxy,ordinary ETF
+EWQ,France Equities,Europe,Broad Market,Equity,USD,France,1996-03-12,US-listed research proxy,ordinary ETF
+EWI,Italy Equities,Europe,Broad Market,Equity,USD,Italy,1996-03-12,US-listed research proxy,ordinary ETF
+EWP,Spain Equities,Europe,Broad Market,Equity,USD,Spain,1996-03-12,US-listed research proxy,ordinary ETF
+EWL,Switzerland Equities,Europe,Broad Market,Equity,USD,Switzerland,1996-03-12,US-listed research proxy,ordinary ETF
+VGK,European Equities,Europe,Broad Market,Equity,USD,Europe,2005-03-04,US-listed research proxy,ordinary ETF
+EZU,Eurozone Equities,Europe,Broad Market,Equity,USD,Eurozone,2000-07-25,US-listed research proxy,ordinary ETF
+FEZ,Euro Stoxx 50,Europe,Broad Market,Equity,USD,Eurozone Large Cap,2002-10-15,US-listed research proxy,ordinary ETF
+EWT,Taiwan Equities,Asia-Pacific,Technology,Equity,USD,Taiwan,2000-06-20,US-listed research proxy,ordinary ETF
+EWY,South Korea Equities,Asia-Pacific,Broad Market,Equity,USD,South Korea,2000-05-09,US-listed research proxy,ordinary ETF
+EWA,Australia Equities,Asia-Pacific,Broad Market,Equity,USD,Australia,1996-03-12,US-listed research proxy,ordinary ETF
+EWH,Hong Kong Equities,Asia-Pacific,Broad Market,Equity,USD,Hong Kong,1996-03-12,US-listed research proxy,ordinary ETF
+EWS,Singapore Equities,Asia-Pacific,Broad Market,Equity,USD,Singapore,1996-03-12,US-listed research proxy,ordinary ETF
+MCHI,China Equities,China,Broad Market,Equity,USD,China,2011-03-29,US-listed research proxy,ordinary ETF
+FXI,China Large Caps,China,Broad Market,Equity,USD,China Large Cap,2004-10-05,US-listed research proxy,ordinary ETF
+KWEB,China Internet,China,Internet,Equity,USD,China Technology,2013-07-31,US-listed research proxy,ordinary ETF
+ASHR,China A-Shares,China,Broad Market,Equity,USD,China A-Shares,2013-11-06,US-listed research proxy,ordinary ETF
+INDA,India Equities,India,Broad Market,Equity,USD,India,2012-02-02,US-listed research proxy,ordinary ETF
+EPI,India Earnings,India,Broad Market,Equity,USD,India,2008-02-22,US-listed research proxy,ordinary ETF
+INDY,India Large Caps,India,Broad Market,Equity,USD,India Large Cap,2009-11-18,US-listed research proxy,ordinary ETF
+VNM,Vietnam Equities,Asia-Pacific,Broad Market,Equity,USD,Vietnam,2009-08-11,US-listed research proxy,ordinary ETF
+THD,Thailand Equities,Asia-Pacific,Broad Market,Equity,USD,Thailand,2008-03-26,US-listed research proxy,ordinary ETF
+EIDO,Indonesia Equities,Asia-Pacific,Broad Market,Equity,USD,Indonesia,2010-05-05,US-listed research proxy,ordinary ETF
+EWZ,Brazil Equities,Latin America,Broad Market,Equity,USD,Brazil,2000-07-10,US-listed research proxy,ordinary ETF
+EWW,Mexico Equities,Latin America,Broad Market,Equity,USD,Mexico,1996-03-12,US-listed research proxy,ordinary ETF
+ILF,Latin America Equities,Latin America,Broad Market,Equity,USD,Latin America,2001-10-25,US-listed research proxy,ordinary ETF
+EWC,Canada Equities,North America,Broad Market,Equity,USD,Canada,1996-03-12,US-listed research proxy,ordinary ETF
+XLV,US Healthcare,United States,Healthcare,Equity,USD,US Healthcare,1998-12-16,US-listed research proxy,ordinary ETF
+VHT,US Healthcare,United States,Healthcare,Equity,USD,US Healthcare,2004-01-26,US-listed research proxy,ordinary ETF
+IYH,US Healthcare,United States,Healthcare,Equity,USD,US Healthcare,2000-06-12,US-listed research proxy,ordinary ETF
+IBB,Biotechnology,United States,Biotechnology,Equity,USD,Biotechnology,2001-02-05,US-listed research proxy,ordinary ETF
+BBH,Biotechnology,United States,Biotechnology,Equity,USD,Biotechnology,2011-12-20,US-listed research proxy,ordinary ETF
+IHE,US Pharmaceuticals,United States,Pharmaceuticals,Equity,USD,Pharmaceuticals,2006-05-05,US-listed research proxy,ordinary ETF
+XPH,US Pharmaceuticals,United States,Pharmaceuticals,Equity,USD,Pharmaceuticals,2006-06-19,US-listed research proxy,ordinary ETF
+IHI,US Medical Devices,United States,Medical Devices,Equity,USD,Medical Devices,2006-05-05,US-listed research proxy,ordinary ETF
+ARKG,Genomic Innovation,United States,Biotechnology,Equity,USD,Genomics,2014-10-31,US-listed research proxy,ordinary ETF
+VGT,US Information Technology,United States,Technology,Equity,USD,US Technology,2004-01-26,US-listed research proxy,ordinary ETF
+IYW,US Technology,United States,Technology,Equity,USD,US Technology,2000-05-15,US-listed research proxy,ordinary ETF
+FTEC,US Information Technology,United States,Technology,Equity,USD,US Technology,2013-10-21,US-listed research proxy,ordinary ETF
+SOXX,Semiconductors,United States,Semiconductors,Equity,USD,Semiconductors,2001-07-10,US-listed research proxy,ordinary ETF
+PSI,Dynamic Semiconductors,United States,Semiconductors,Equity,USD,Semiconductors,2005-06-23,US-listed research proxy,ordinary ETF
+IGV,Software,United States,Software,Equity,USD,Software,2001-07-10,US-listed research proxy,ordinary ETF
+SKYY,Cloud Computing,Global,Cloud Computing,Equity,USD,Cloud Computing,2011-07-05,US-listed research proxy,ordinary ETF
+CLOU,Cloud Computing,Global,Cloud Computing,Equity,USD,Cloud Computing,2019-04-12,US-listed research proxy,ordinary ETF
+CIBR,Cybersecurity,Global,Cybersecurity,Equity,USD,Cybersecurity,2015-07-07,US-listed research proxy,ordinary ETF
+HACK,Cybersecurity,Global,Cybersecurity,Equity,USD,Cybersecurity,2014-11-11,US-listed research proxy,ordinary ETF
+ROBO,Robotics and Automation,Global,Automation,Equity,USD,Robotics,2013-10-22,US-listed research proxy,ordinary ETF
+BOTZ,Robotics and Artificial Intelligence,Global,Artificial Intelligence,Equity,USD,Robotics and AI,2016-09-12,US-listed research proxy,ordinary ETF
+ARKQ,Autonomous Technology and Robotics,Global,Automation,Equity,USD,Automation,2014-09-30,US-listed research proxy,ordinary ETF
+XLC,US Communication Services,United States,Communications,Equity,USD,Communications,2018-06-18,US-listed research proxy,ordinary ETF
+VOX,US Communication Services,United States,Communications,Equity,USD,Communications,2004-09-23,US-listed research proxy,ordinary ETF
+XLY,US Consumer Discretionary,United States,Consumer Discretionary,Equity,USD,Consumer Discretionary,1998-12-16,US-listed research proxy,ordinary ETF
+VCR,US Consumer Discretionary,United States,Consumer Discretionary,Equity,USD,Consumer Discretionary,2004-01-26,US-listed research proxy,ordinary ETF
+XLP,US Consumer Staples,United States,Consumer Staples,Equity,USD,Consumer Staples,1998-12-16,US-listed research proxy,ordinary ETF
+VDC,US Consumer Staples,United States,Consumer Staples,Equity,USD,Consumer Staples,2004-01-26,US-listed research proxy,ordinary ETF
+XLF,US Financials,United States,Financials,Equity,USD,Financials,1998-12-16,US-listed research proxy,ordinary ETF
+VFH,US Financials,United States,Financials,Equity,USD,Financials,2004-01-26,US-listed research proxy,ordinary ETF
+KRE,US Regional Banks,United States,Financials,Equity,USD,Regional Banks,2006-06-19,US-listed research proxy,ordinary ETF
+KBE,US Banks,United States,Financials,Equity,USD,Banks,2005-11-08,US-listed research proxy,ordinary ETF
+IAK,US Insurance,United States,Insurance,Equity,USD,Insurance,2006-05-05,US-listed research proxy,ordinary ETF
+XLI,US Industrials,United States,Industrials,Equity,USD,Industrials,1998-12-16,US-listed research proxy,ordinary ETF
+VIS,US Industrials,United States,Industrials,Equity,USD,Industrials,2004-09-23,US-listed research proxy,ordinary ETF
+ITA,US Aerospace and Defense,United States,Defense,Equity,USD,Aerospace and Defense,2006-05-05,US-listed research proxy,ordinary ETF
+XAR,US Aerospace and Defense,United States,Defense,Equity,USD,Aerospace and Defense,2011-09-28,US-listed research proxy,ordinary ETF
+PPA,Global Aerospace and Defense,Global,Defense,Equity,USD,Aerospace and Defense,2005-10-26,US-listed research proxy,ordinary ETF
+EUAD,European Defense,Europe,Defense,Equity,USD,European Defense,2023-10-03,US-listed research proxy,ordinary ETF
+PAVE,US Infrastructure,United States,Infrastructure,Equity,USD,Infrastructure,2017-03-08,US-listed research proxy,ordinary ETF
+IFRA,US Infrastructure,United States,Infrastructure,Equity,USD,Infrastructure,2018-04-03,US-listed research proxy,ordinary ETF
+IGF,Global Infrastructure,Global,Infrastructure,Equity,USD,Infrastructure,2007-12-10,US-listed research proxy,ordinary ETF
+XLU,US Utilities,United States,Utilities,Equity,USD,Utilities,1998-12-16,US-listed research proxy,ordinary ETF
+VPU,US Utilities,United States,Utilities,Equity,USD,Utilities,2004-01-26,US-listed research proxy,ordinary ETF
+XLB,US Materials,United States,Materials,Equity,USD,Materials,1998-12-16,US-listed research proxy,ordinary ETF
+VAW,US Materials,United States,Materials,Equity,USD,Materials,2004-01-26,US-listed research proxy,ordinary ETF
+GDX,Gold Miners,Global,Gold Miners,Equity,USD,Gold Miners,2006-05-16,US-listed research proxy,ordinary ETF
+GDXJ,Junior Gold Miners,Global,Gold Miners,Equity,USD,Junior Gold Miners,2009-11-10,US-listed research proxy,ordinary ETF
+XME,Metals and Mining,United States,Materials,Equity,USD,Metals and Mining,2006-06-19,US-listed research proxy,ordinary ETF
+XOP,Oil and Gas Exploration,United States,Energy,Equity,USD,Energy,2006-06-19,US-listed research proxy,ordinary ETF
+VDE,US Energy,United States,Energy,Equity,USD,Energy,2004-09-23,US-listed research proxy,ordinary ETF
+OIH,Oil Services,Global,Energy,Equity,USD,Oil Services,2011-12-20,US-listed research proxy,ordinary ETF
+ICLN,Global Clean Energy,Global,Clean Energy,Equity,USD,Clean Energy,2008-06-24,US-listed research proxy,ordinary ETF
+TAN,Solar Energy,Global,Clean Energy,Equity,USD,Solar Energy,2008-04-15,US-listed research proxy,ordinary ETF
+FAN,Global Wind Energy,Global,Clean Energy,Equity,USD,Wind Energy,2008-06-16,US-listed research proxy,ordinary ETF
+VNQ,US Real Estate,United States,Real Estate,Equity,USD,US Real Estate,2004-09-23,US-listed research proxy,ordinary ETF
+IYR,US Real Estate,United States,Real Estate,Equity,USD,US Real Estate,2000-06-12,US-listed research proxy,ordinary ETF
+REET,Global Real Estate,Global,Real Estate,Equity,USD,Global Real Estate,2014-07-08,US-listed research proxy,ordinary ETF
+GLD,Gold,Global,Gold,Commodity,USD,Gold,2004-11-18,US-listed research proxy,physically backed grantor trust
+IAU,Gold,Global,Gold,Commodity,USD,Gold,2005-01-21,US-listed research proxy,physically backed grantor trust
+SLV,Silver,Global,Silver,Commodity,USD,Silver,2006-04-21,US-listed research proxy,physically backed grantor trust
+PPLT,Platinum,Global,Platinum,Commodity,USD,Platinum,2010-01-08,US-listed research proxy,physically backed grantor trust
+DBC,Broad Commodities,Global,Commodities,Commodity,USD,Broad Commodities,2006-02-03,US-listed research proxy,futures-based ETF
+GSG,Broad Commodities,Global,Commodities,Commodity,USD,Broad Commodities,2006-07-10,US-listed research proxy,futures-based trust
+USO,Crude Oil,Global,Energy Commodity,Commodity,USD,Crude Oil,2006-04-10,US-listed research proxy,futures-based partnership
+DBA,Agriculture Commodities,Global,Agriculture,Commodity,USD,Agriculture,2007-01-05,US-listed research proxy,futures-based ETF
+TLT,Long US Treasuries,United States,Government Bonds,Fixed Income,USD,Long Government Bonds,2002-07-22,US-listed research proxy,ordinary bond ETF
+IEF,Intermediate US Treasuries,United States,Government Bonds,Fixed Income,USD,Intermediate Government Bonds,2002-07-22,US-listed research proxy,ordinary bond ETF
+SHY,Short US Treasuries,United States,Government Bonds,Fixed Income,USD,Short Government Bonds,2002-07-22,US-listed research proxy,ordinary bond ETF
+TIP,US Inflation-Protected Bonds,United States,Inflation-Linked Bonds,Fixed Income,USD,Inflation-Linked Bonds,2003-12-04,US-listed research proxy,ordinary bond ETF
+AGG,US Aggregate Bonds,United States,Broad Bonds,Fixed Income,USD,Aggregate Bonds,2003-09-22,US-listed research proxy,ordinary bond ETF
+BND,US Total Bond Market,United States,Broad Bonds,Fixed Income,USD,Aggregate Bonds,2007-04-03,US-listed research proxy,ordinary bond ETF
+LQD,US Investment-Grade Corporate Bonds,United States,Corporate Bonds,Fixed Income,USD,Investment Grade Bonds,2002-07-22,US-listed research proxy,ordinary bond ETF
+HYG,US High-Yield Bonds,United States,High Yield Bonds,Fixed Income,USD,High Yield Bonds,2007-04-04,US-listed research proxy,ordinary bond ETF
+JNK,US High-Yield Bonds,United States,High Yield Bonds,Fixed Income,USD,High Yield Bonds,2007-12-04,US-listed research proxy,ordinary bond ETF
+EMB,Emerging-Market Bonds,Emerging Markets,Sovereign Bonds,Fixed Income,USD,Emerging Market Bonds,2007-12-17,US-listed research proxy,ordinary bond ETF
+BNDX,International Bonds,Global,Broad Bonds,Fixed Income,USD,International Bonds,2013-05-31,US-listed research proxy,ordinary bond ETF
+MUB,US Municipal Bonds,United States,Municipal Bonds,Fixed Income,USD,Municipal Bonds,2007-09-07,US-listed research proxy,ordinary bond ETF
+ARKK,Disruptive Innovation,Global,Innovation,Equity,USD,Innovation,2014-10-31,US-listed research proxy,ordinary ETF
+FINX,Financial Technology,Global,Financial Technology,Equity,USD,Fintech,2016-09-12,US-listed research proxy,ordinary ETF
+LIT,Lithium and Battery Technology,Global,Battery Technology,Equity,USD,Battery Technology,2010-07-22,US-listed research proxy,ordinary ETF
+COPX,Copper Miners,Global,Copper,Equity,USD,Copper Miners,2010-04-19,US-listed research proxy,ordinary ETF
+URA,Uranium and Nuclear Energy,Global,Nuclear Energy,Equity,USD,Uranium,2010-11-04,US-listed research proxy,ordinary ETF
+KIE,US Insurance,United States,Insurance,Equity,USD,Insurance,2005-11-08,US-listed research proxy,ordinary ETF
+IYT,US Transportation,United States,Transportation,Equity,USD,Transportation,2003-10-10,US-listed research proxy,ordinary ETF
+JETS,Global Airlines,Global,Transportation,Equity,USD,Airlines,2015-04-28,US-listed research proxy,ordinary ETF
+XTN,US Transportation,United States,Transportation,Equity,USD,Transportation,2011-01-26,US-listed research proxy,ordinary ETF
+PEJ,Leisure and Entertainment,United States,Consumer Discretionary,Equity,USD,Leisure,2005-06-23,US-listed research proxy,ordinary ETF
+XRT,US Retail,United States,Consumer Discretionary,Equity,USD,Retail,2006-06-19,US-listed research proxy,ordinary ETF
+ITB,US Homebuilders,United States,Homebuilders,Equity,USD,Homebuilders,2006-05-01,US-listed research proxy,ordinary ETF
+XHB,US Homebuilders,United States,Homebuilders,Equity,USD,Homebuilders,2006-01-31,US-listed research proxy,ordinary ETF
+PBW,Clean Energy,Global,Clean Energy,Equity,USD,Clean Energy,2005-03-03,US-listed research proxy,ordinary ETF
+WOOD,Global Timber and Forestry,Global,Materials,Equity,USD,Timber,2008-06-24,US-listed research proxy,ordinary ETF
+CGW,Global Water,Global,Water,Equity,USD,Water,2007-05-14,US-listed research proxy,ordinary ETF
+PHO,US Water,United States,Water,Equity,USD,Water,2005-12-06,US-listed research proxy,ordinary ETF

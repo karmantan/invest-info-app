@@ -1,0 +1,103 @@
+provider: Yahoo Finance via yfinance
+source_label: Indicative Yahoo/Xetra research data — not a verified Trade Republic/LS Exchange execution quote
+timezone: Europe/Berlin
+market_calendar: XETR
+window:
+  open: "09:00"
+  close: "17:30"
+timeout_seconds: 90
+cooldown_seconds: 3600
+stale_after_seconds: 900
+suspicious_spread_bps: 100
+mappings:
+  - isin: IE00B3WJKG14
+    yahoo_ticker: QDVE.DE
+    exchange: Xetra
+    exchange_aliases: [XETRA, GER]
+    currency: EUR
+    verified: true
+    verification: iShares official listing table (Xetra QDVE, RIC QDVE.DE, EUR), checked 2026-09-04
+  - isin: LU1681045370
+    yahoo_ticker: AMEM.DE
+    exchange: Xetra
+    exchange_aliases: [XETRA, GER]
+    currency: EUR
+    verified: true
+    verification: Amundi official factsheet (Xetra AMEM, RIC AMEM.DE, EUR), checked 2026-09-04
+  - isin: IE00B42NKQ00
+    yahoo_ticker: QDVF.DE
+    exchange: Xetra
+    exchange_aliases: [XETRA, GER]
+    currency: EUR
+    verified: true
+    verification: iShares official factsheet (Xetra QDVF, RIC QDVF.DE, EUR), checked 2026-09-04
+  - isin: IE00BYXG2H39
+    yahoo_ticker: 2B70.DE
+    exchange: Xetra
+    exchange_aliases: [XETRA, GER]
+    currency: EUR
+    verified: true
+    verification: iShares listing table and Deutsche Börse instrument master data, checked 2026-09-04
+  - isin: LU2023679090
+    yahoo_ticker: ELCR.DE
+    exchange: Xetra
+    exchange_aliases: [XETRA, GER]
+    currency: EUR
+    verified: true
+    verification: Amundi official factsheet (Xetra ELCR, RIC ELCR.DE, EUR), checked 2026-09-04
+  - isin: IE00B1XNHC34
+    yahoo_ticker: IQQH.DE
+    exchange: Xetra
+    exchange_aliases: [XETRA, GER]
+    currency: EUR
+    verified: true
+    verification: iShares official listing table (Xetra IQQH, RIC IQQH.DE, EUR), checked 2026-09-04
+  - isin: LU0496786657
+    yahoo_ticker: 6TVM.DE
+    exchange: Xetra
+    exchange_aliases: [XETRA, GER]
+    currency: EUR
+    verified: true
+    verification: Amundi official factsheet and Deutsche Börse master data (Xetra 6TVM, RIC 6TVM.DE, EUR), checked 2026-09-04
+  - isin: IE00BG0J4841
+    yahoo_ticker: IS4S.DE
+    exchange: Xetra
+    exchange_aliases: [XETRA, GER]
+    currency: EUR
+    verified: true
+    verification: Deutsche Börse official master data (Xetra IS4S, EUR), checked 2026-09-04
+  - isin: IE00BYZK4552
+    yahoo_ticker: 2B76.DE
+    exchange: Xetra
+    exchange_aliases: [XETRA, GER]
+    currency: EUR
+    verified: true
+    verification: iShares official listing table (Xetra 2B76, EUR), checked 2026-09-04
+  - isin: DE0006231004
+    yahoo_ticker: IFX.DE
+    exchange: Xetra
+    exchange_aliases: [XETRA, GER]
+    currency: EUR
+    verified: true
+    verification: Infineon official capital-market data plus Yahoo listing (Xetra IFX.DE, EUR), checked 2026-09-04
+unresolved:
+  - isin: IE000BI8OT95
+    reason: Official Amundi data identifies Xetra ticker MWRE but gives RIC MWRDGEUR.DE; Yahoo symbol identity is ambiguous.
+  - isin: IE00BMC38736
+    reason: Current VanEck materials conflict between Xetra tickers VVSM and VWSM; mapping needs issuer clarification.
+  - isin: IE00B8K7KM88
+    reason: WisdomTree verifies Xetra US9S/EUR, but Yahoo returns quote type NONE with no exchange, currency or quote fields for US9S.DE; unsupported by this provider.
+  - isin: US3743964062
+    reason: No issuer-verified Xetra/Yahoo European listing found; the US primary listing will not be substituted.
+  - isin: US88160R1014
+    reason: Multiple German venues exist, but no issuer source ties this holding to one European Yahoo listing; the US primary listing will not be substituted.
+  - isin: US9311421039
+    reason: Multiple German venues exist, but no issuer source ties this holding to one European Yahoo listing; the US primary listing will not be substituted.
+  - isin: US8835561023
+    reason: Multiple German venues exist, but no issuer source ties this holding to one European Yahoo listing; the US primary listing will not be substituted.
+  - isin: US62914V1061
+    reason: The holding may be an ADR and European venue identity is ambiguous; no primary-US proxy will be substituted.
+  - isin: US87612E1064
+    reason: Multiple German venues exist, but no issuer source ties this holding to one European Yahoo listing; the US primary listing will not be substituted.
+  - isin: US2546871060
+    reason: Multiple German venues exist, but no issuer source ties this holding to one European Yahoo listing; the US primary listing will not be substituted.

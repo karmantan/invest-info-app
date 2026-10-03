@@ -1,0 +1,2 @@
+"""Replaceable public-data adapters."""
+

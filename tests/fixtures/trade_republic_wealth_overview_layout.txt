@@ -1,0 +1,18 @@
+VERMÖGENSÜBERSICHT
+Brokerage                                                        3.500,00
+Crypto Wallet                                                       50,00
+Cash                                                               450,00
+GESAMT                                                           4.000,00 EUR
+STK. / NOMINALE        WERTPAPIERBEZEICHNUNG             KURS PRO STÜCK       KURSWERT IN EUR
+10 Stk.                Sanitized Alpha Fund                        100,00              1.000,00
+                       ISIN: DE000TEST001
+                       Synthetic detail row
+5 Stk.                 Sanitized Beta Fund                         500,00              2.500,00
+                       ISIN: IE000TEST002
+                       ANZAHL POSITIONEN: 2                                           3.500,00 EUR
+CRYPTO WALLET
+0,001 Stk.             Sanitized Coin                           50.000,00                 50,00
+                       ANZAHL POSITIONEN: 1                                              50,00 EUR
+CASH
+PRODUKT                                                                    SALDO
+Cashkonto                                                               450,00 EUR

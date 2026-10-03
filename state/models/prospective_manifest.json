@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-09-02T09:43:00.390624+00:00",
+  "frozen_21d_research_hash": "da84657d0318faba5660293848734cdff896246c310cc57af55e37a78f2cfa30",
+  "frozen_medium_research_hash": "c6abcd79817cba9d0912bdc67f67c5f3827990dd684e522393a325b59082be47",
+  "models": {
+    "21": {
+      "path": "state/models/frozen_ridge_21d.joblib",
+      "sha256": "bbaa4a83696a450fae4b60f2c28516669ff6b9742a554c867b884d27d796a2ef",
+      "training_rows": 37201,
+      "training_data_end": "2026-08-31 00:00:00",
+      "features": [
+        "eur_return_5d",
+        "eur_return_21d",
+        "eur_return_63d",
+        "broad_momentum_21d",
+        "drawdown_63d",
+        "volatility_21d",
+        "dgs2",
+        "dgs2_change_5d",
+        "dgs2_change_21d",
+        "dgs10",
+        "dgs10_change_5d",
+        "dgs10_change_21d",
+        "curve_2s10s",
+        "vix",
+        "eurusd_change_21d"
+      ]
+    },
+    "63": {
+      "path": "state/models/frozen_ridge_63d.joblib",
+      "sha256": "b19a2ab4666c6715ca6244c4df8771a8d88657c44d3d7814a025f68d1863db90",
+      "training_rows": 36907,
+      "training_data_end": "2026-08-31 00:00:00",
+      "features": [
+        "eur_return_5d",
+        "eur_return_21d",
+        "eur_return_63d",
+        "eur_return_126d",
+        "eur_return_252d",
+        "drawdown_63d",
+        "drawdown_126d",
+        "drawdown_252d",
+        "distance_ma50",
+        "distance_ma200",
+        "volatility_63d",
+        "relative_spy_63d",
+        "relative_urth_63d",
+        "vix",
+        "dgs2",
+        "dgs10",
+        "dgs2_change_21d",
+        "dgs10_change_21d",
+        "curve_2s10s",
+        "eurusd_change_21d",
+        "fundamental_stability_score",
+        "fundamental_coverage"
+      ]
+    },
+    "126": {
+      "path": "state/models/frozen_ridge_126d.joblib",
+      "sha256": "2ad3e05634b032eac53d4aac5933930c2c8b7a4bb47d68e80d5a63885e4c5140",
+      "training_rows": 36466,
+      "training_data_end": "2026-08-31 00:00:00",
+      "features": [
+        "eur_return_5d",
+        "eur_return_21d",
+        "eur_return_63d",
+        "eur_return_126d",
+        "eur_return_252d",
+        "drawdown_63d",
+        "drawdown_126d",
+        "drawdown_252d",
+        "distance_ma50",
+        "distance_ma200",
+        "volatility_63d",
+        "relative_spy_63d",
+        "relative_urth_63d",
+        "vix",
+        "dgs2",
+        "dgs10",
+        "dgs2_change_21d",
+        "dgs10_change_21d",
+        "curve_2s10s",
+        "eurusd_change_21d",
+        "fundamental_stability_score",
+        "fundamental_coverage"
+      ]
+    }
+  }
+}
