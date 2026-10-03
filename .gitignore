@@ -16,3 +16,8 @@ logs/*
 !logs/.gitkeep
 
 private_inputs/
+
+# website caches and uploads (state/ also holds the database)
+state/prices/
+state/isin_symbols.json
+*.pdf

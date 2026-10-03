@@ -1,0 +1,65 @@
+# Settings for the hosted website (webapp/app.py). Every value can be changed
+# on the website's Settings page; these are only the starting defaults.
+trade_republic:
+  order_fee_eur: 1.0            # external cost per buy or sell order
+  savings_plan_fee_eur: 0.0     # savings-plan executions are free
+  cash_interest_rate: 0.02      # yearly interest on uninvested cash — check the app for the current rate
+tax:
+  capital_gains_rate: 0.25      # Abgeltungsteuer
+  solidarity_surcharge_rate: 0.055
+  church_tax_rate: 0.0          # 0.08 (Bavaria, Baden-Württemberg) or 0.09 if you pay church tax
+  saver_allowance_eur: 1000     # Sparer-Pauschbetrag still unused this year (2000 if filing jointly)
+  partial_exemption:            # Teilfreistellung by fund type
+    equity: 0.30
+    mixed: 0.15
+    bond: 0.0
+    gold_etc: 0.0
+  personal_income_tax_rate: 0.30  # only used for gold ETCs sold within one year
+  private_sale_exemption_limit_eur: 1000  # Freigrenze for §23 private sales
+model:
+  equity_risk_premium: 0.045    # extra yearly return the world stock market is expected to earn over cash
+  risk_free_fallback: 0.02      # used when the money-market ETF has no recent data
+  prior_alpha_uncertainty: 0.015  # how far (per year) a fund's true return may plausibly differ from CAPM; smaller = trust history less
+  momentum_strength: 0.02       # yearly tilt per unit of trend strength
+  momentum_decay_years: 0.5     # trend effect fades with this time constant
+  vol_decay_years: 0.25         # current calm/stress fades back to normal volatility
+  ewma_lambda: 0.94             # RiskMetrics daily decay for current volatility
+  market_ticker: EUNL.DE
+  cash_ticker: XEON.DE
+  history_years: 20
+data:
+  max_age_hours: 12             # refresh market data at most this often
+benchmarks:
+  - {ticker: EUNL.DE, name: "World stocks (MSCI World)"}
+  - {ticker: SXR8.DE, name: "US stocks (S&P 500)"}
+  - {ticker: VWCE.DE, name: "Whole world incl. emerging (FTSE All-World)"}
+  - {ticker: EXS1.DE, name: "German stocks (DAX)"}
+  - {ticker: SXRV.DE, name: "US tech (Nasdaq 100)"}
+  - {ticker: IS3N.DE, name: "Emerging markets"}
+# ISIN -> Yahoo symbol for holdings that are not in the ETF list above.
+# Non-EUR symbols are converted to EUR automatically. Anything missing here is
+# looked up through Yahoo's search by ISIN.
+isin_overrides:
+  DE0006231004: IFX.DE
+  IE000BI8OT95: MWRE.DE      # Amundi Core MSCI World (MWRD.DE on Yahoo is a stale GBP line)
+  IE00BMC38736: VVSM.DE
+  IE00B8K7KM88: 3USS.MI
+  LU0496786657: 6TVM.DE
+  LU1681045370: AMEM.DE
+  IE00B42NKQ00: QDVF.DE
+  IE00BG0J4841: IS4S.DE
+  LU2023679090: ELCR.DE
+  US88160R1014: TSLA
+  US3743964062: GEVO
+  US8835561023: TMO
+  US62914V1061: NIO
+  US2546871060: DIS
+  US9311421039: WMT
+  US87612E1064: TGT
+crypto_symbols:
+  BTC: BTC-EUR
+  ETH: ETH-EUR
+  SOL: SOL-EUR
+  XRP: XRP-EUR
+  ADA: ADA-EUR
+  DOGE: DOGE-EUR

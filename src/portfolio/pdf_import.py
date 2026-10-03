@@ -161,6 +161,30 @@ def _extract_layout_holdings(lines: list[str]) -> tuple[list[dict[str, Any]], li
     return holdings, unmatched
 
 
+CRYPTO_ROW = re.compile(r"^\s*(\d[\d.]*(?:,\d+)?)\s+Stk\.\s+(?:(.*?)\s+)?(\d[\d.]*,\d+)\s+(\d[\d.]*,\d+)\s*$")
+CRYPTO_SYMBOL = re.compile(r"^\s*([A-Z0-9]{2,10})\b")
+
+
+def _extract_crypto_holdings(lines: list[str]) -> list[dict[str, Any]]:
+    """Crypto Wallet rows: quantity, optional name, price and value, with the coin symbol on the next row."""
+    start = next((i + 1 for i, line in enumerate(lines) if re.match(r"^\s*CRYPTO WALLET\s*$", line, re.I)), None)
+    if start is None:
+        return []
+    holdings: list[dict[str, Any]] = []
+    for index in range(start, len(lines)):
+        line = lines[index]
+        if re.search(r"ANZAHL\s+POSITIONEN", line, re.I):
+            break
+        match = CRYPTO_ROW.match(line)
+        if not match:
+            continue
+        symbol_match = CRYPTO_SYMBOL.match(lines[index + 1]) if index + 1 < len(lines) else None
+        symbol = symbol_match.group(1) if symbol_match else None
+        holdings.append({"name": (match.group(2) or symbol or "Crypto").strip(), "symbol": symbol, "quantity": _number(match.group(1)),
+                         "displayed_price": _number(match.group(3)), "market_value_eur": _number(match.group(4))})
+    return holdings
+
+
 def _layout_labelled_value(lines: list[str], label: re.Pattern[str], lookahead: int = 0) -> float | None:
     for index, line in enumerate(lines):
         if not label.search(line.strip()):
@@ -227,7 +251,7 @@ def parse_text(text: str, source_file: str = "upload.pdf", *, page_texts: list[s
     if total_difference is not None and abs(total_difference) > tolerance:
         warnings.append("The securities, crypto, and cash subtotals do not reconcile to the reported total financial assets.")
     diagnostics = {"page_count": len(pages), "embedded_text_present": bool(normalized.strip()), "page_character_counts": [len(page) for page in pages], "positioned_extraction_used": positioned_lines is not None, "structural_layout_parser_used": bool(layout_holdings), "isin_candidates": len(set(ISIN.findall(normalized))), "accepted_holdings": len(holdings), "unmatched_candidates": unmatched}
-    return {"snapshot_date": snapshot_date, "document_type": document_type, "contains_portfolio_snapshot": contains_snapshot, "cash_eur": cash, "cash_included": cash_included, "cash_source": "extracted" if cash is not None else "absent", "securities_value_eur": securities_value, "reported_securities_value_eur": reported_securities_value, "crypto_value_eur": crypto_value, "reported_total_financial_assets_eur": reported_total, "total_financial_assets_difference_eur": total_difference, "reconciliation_difference_eur": difference, "reconciliation_tolerance_eur": tolerance, "material_reconciliation_mismatch": material_mismatch, "total_value_eur": reported_total if reported_total is not None and total_difference is not None and abs(total_difference) <= tolerance else calculated_total, "holdings": holdings, "unmatched": unmatched, "source_file": source_file, "warnings": warnings, "diagnostics": diagnostics}
+    return {"snapshot_date": snapshot_date, "document_type": document_type, "contains_portfolio_snapshot": contains_snapshot, "cash_eur": cash, "cash_included": cash_included, "cash_source": "extracted" if cash is not None else "absent", "securities_value_eur": securities_value, "reported_securities_value_eur": reported_securities_value, "crypto_value_eur": crypto_value, "reported_total_financial_assets_eur": reported_total, "total_financial_assets_difference_eur": total_difference, "reconciliation_difference_eur": difference, "reconciliation_tolerance_eur": tolerance, "material_reconciliation_mismatch": material_mismatch, "total_value_eur": reported_total if reported_total is not None and total_difference is not None and abs(total_difference) <= tolerance else calculated_total, "holdings": holdings, "crypto_holdings": _extract_crypto_holdings(layout_lines), "unmatched": unmatched, "source_file": source_file, "warnings": warnings, "diagnostics": diagnostics}
 
 
 def _positioned_page_lines(page: Any) -> list[str]:

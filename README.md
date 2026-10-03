@@ -1,8 +1,46 @@
 # Quiet Capital Research — V1
 
+> **New:** a hosted website for picking ETFs and simulating investments — see [Website](#website-hosted-password-protected).
+
 A local-first quantitative research, portfolio-monitoring, and decision-support application for a risk-averse private investor in Germany. It **does not place trades**, connect to Trade Republic, or request brokerage credentials. Every investment decision remains manual.
 
 V1 is deliberately conservative: without a reconciled portfolio and genuine out-of-sample evidence it displays **NO HIGH-CONFIDENCE ACTION TODAY**. Synthetic demonstration data validate software behavior only and are never presented as investment evidence.
+
+## Website (hosted, password-protected)
+
+`webapp/app.py` is a separate, plain-language website meant to be hosted (Render) so it is reachable from any browser without starting anything locally. The research dashboard below is unchanged.
+
+| Page | What it shows |
+|---|---|
+| **Overview** | Cash / brokerage / crypto split from your latest Trade Republic statement, updated with today's prices; a line chart of your holdings' return versus MSCI World, S&P 500, FTSE All-World, DAX, Nasdaq 100 or emerging markets (1M – 10Y); best and worst holdings; pretend investments you are tracking. |
+| **ETF ideas** | 30 Trade Republic-tradable UCITS ETFs (Xetra, EUR, with ISIN) ranked for short (1–12 months), medium (1–5 years) and long (5–30 years) horizons — each with a drag-able horizon — showing the expected result after fees and tax, a bad and a good case, the chance of a loss, and how much variety it adds to what you already own. |
+| **What if I invest?** | Pick an ETF, drag the amount (capped at your cash) and the horizon, one-off or monthly savings plan; see the expected outcome, the 1-in-10 bad/good cases, a fan chart against leaving the money in Trade Republic cash, up to two comparison ETFs, and what really happened in every past period of the same length. Save it as a pretend investment to track it from today. |
+| **My Trade Republic** | Upload the *Vermögensübersicht* PDF; positions, cash and crypto are read, reconciled to the statement totals, and stored on the server's disk. |
+| **Settings & method** | Cash interest rate, unused tax allowance, church tax, equity risk premium, order fee — and a plain-language explanation of the model. |
+
+**Model.** Expected return blends a CAPM estimate (cash rate + beta × equity risk premium − TER) with the fund's own history, shrunk by a volatility-aware Bayesian weight; a capped, fading 12-1 month momentum tilt affects short horizons; volatility moves from today's EWMA level to the long-run level; outcomes are log-normal (savings plans: Monte Carlo). Trade Republic's €1 order fee (free savings plans), half the bid-ask spread each way, Teilfreistellung (30% equity funds), the saver allowance, Abgeltungsteuer + Soli (+ church tax) and Xetra-Gold's one-year tax exemption are applied to every outcome before averaging. Defaults live in `config/web.yaml`; the ETF list in `config/tr_etf_universe.csv`.
+
+**Data.** Daily prices from Yahoo Finance (chart API, yfinance as fallback), cached on disk for 12 hours and reused when Yahoo is unavailable. Holdings are matched by ISIN (overrides in `config/web.yaml`, then Yahoo search, preferring Xetra), converted to EUR, and anchored to the statement value so only relative price moves are used; a price that disagrees with the statement by more than 25% is ignored.
+
+### Deploy on Render
+
+1. Push this repository to GitHub (already done if you are reading it there).
+2. In the Render dashboard choose **New → Blueprint**, select the repository; Render reads `render.yaml`.
+3. Enter a long **APP_PASSWORD** when asked. Without it the site refuses to start.
+4. Wait for the first deploy, open the `…onrender.com` address, log in, and upload your statement on **My Trade Republic**.
+
+`render.yaml` uses the *Starter* instance with a 1 GB persistent disk (Frankfurt), so your statement, settings and pretend investments survive restarts. On the free instance remove the `disk:` block and set `INVEST_DATA_DIR=/tmp/quiet-capital`: it works, but sleeps after 15 idle minutes (about a minute to wake) and forgets uploads on each restart or deploy.
+
+The statement contains your name and address. It is parsed in memory; only the numbers (positions, values, cash) are stored, in SQLite on the server disk. Never commit statements to the repository (`*.pdf` is git-ignored).
+
+### Run the website locally
+
+```bash
+APP_PASSWORD=choose-one ./run_web.sh          # real prices from Yahoo
+INVEST_DEMO_PRICES=1 ./run_web.sh             # offline, synthetic prices (clearly labelled)
+```
+
+Without `APP_PASSWORD` the local site opens without a login; on Render a password is mandatory.
 
 ## Install
 
