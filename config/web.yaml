@@ -19,7 +19,7 @@ tax:
 model:
   equity_risk_premium: 0.045    # extra yearly return the world stock market is expected to earn over cash
   risk_free_fallback: 0.02      # used when the money-market ETF has no recent data
-  shrinkage_years: 20           # years of history at which a 15%-volatility fund's own track record gets half the weight (vs CAPM)
+  prior_alpha_uncertainty: 0.015  # how far (per year) a fund's true return may plausibly differ from CAPM; smaller = trust history less
   momentum_strength: 0.02       # yearly tilt per unit of trend strength
   momentum_decay_years: 0.5     # trend effect fades with this time constant
   vol_decay_years: 0.25         # current calm/stress fades back to normal volatility
@@ -41,6 +41,9 @@ benchmarks:
 # looked up through Yahoo's search by ISIN.
 isin_overrides:
   DE0006231004: IFX.DE
+  IE000BI8OT95: MWRE.DE      # Amundi Core MSCI World (MWRD.DE on Yahoo is a stale GBP line)
+  IE00BMC38736: VVSM.DE
+  IE00B8K7KM88: 3USS.MI
   LU0496786657: 6TVM.DE
   LU1681045370: AMEM.DE
   IE00B42NKQ00: QDVF.DE

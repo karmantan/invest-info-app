@@ -40,8 +40,10 @@ def render() -> None:
 **2. Expected return per year.** Two standard estimates are blended:
 - *Market-based (CAPM):* cash rate + the fund's sensitivity to world stocks (beta) × the equity risk premium − the fund's yearly cost (TER).
   This is the textbook answer to "what should a fund like this earn?" and does not chase past winners.
-- *The fund's own history:* its realised yearly return. It gets more weight the longer and calmer its history (a Bayesian shrinkage); a 10-year
-  history of a typical stock fund gets about one third of the weight, a wild theme fund much less.
+- *The fund's own history:* how much it beat plain cash over the same years (interest rates were near zero for much of 2009–2021,
+  so comparing old returns with today's cash rate would flatter them). This gets a Bayesian weight that grows with the length and calmness
+  of the history: 17 years of MSCI World get about 20%, a 10-year tech fund about 6%. Strong past decades are not simply projected forward.
+- What remains uncertain about the expected return itself is added to the range of outcomes, so long horizons are not over-precise.
 
 **3. Short-term trend.** Funds that rose over the past 12 months (skipping the last month) have tended to keep drifting the same way for a few
 months (time-series momentum). The model adds a small, capped tilt that fades within about half a year — it barely affects long horizons.

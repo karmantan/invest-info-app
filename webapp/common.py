@@ -57,7 +57,10 @@ def price_store() -> PriceStore:
 def resolver() -> IsinResolver:
     search = None
     if DEMO: search = lambda isin: []
-    return IsinResolver(data_dir() / "isin_symbols.json", load_web_config().get("isin_overrides", {}), get_universe(), search=search)
+    def has_prices(symbol: str) -> bool:
+        series, _ = price_store().raw(symbol)
+        return series is not None and len(series.dropna()) >= 20
+    return IsinResolver(data_dir() / "isin_symbols.json", load_web_config().get("isin_overrides", {}), get_universe(), search=search, validate=has_prices)
 
 
 @st.cache_data(ttl=1800, show_spinner=False)
@@ -81,7 +84,7 @@ def _estimates(settings_json: str) -> dict:
     for _, etf in uni.iterrows():
         s = series.get(etf.ticker)
         if s is None: errors[etf.ticker] = "no price data"; continue
-        try: out[etf.ticker] = model.estimate(s, series.get(m["market_ticker"]), etf.to_dict(), rf, settings)
+        try: out[etf.ticker] = model.estimate(s, series.get(m["market_ticker"]), etf.to_dict(), rf, settings, cash_history=series.get(m["cash_ticker"]))
         except Exception as exc: errors[etf.ticker] = str(exc)
     dates = [e.last_date for e in out.values()]
     names = {k: v[1].get("name") for k, v in loaded.items()}

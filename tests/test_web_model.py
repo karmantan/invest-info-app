@@ -82,3 +82,22 @@ def test_historical_windows():
     h = model.historical_windows(s, 1)
     assert h["share_positive"] == 1 and h["windows"] == 1000 - 252
     assert model.historical_windows(s.iloc[:200], 1) is None
+
+
+def test_history_judged_against_cash_of_its_own_era():
+    fund = gbm(0.10, 0.15, seed=4)
+    era_cash = pd.Series(100 * 1.0 ** (np.arange(len(fund)) / 252), index=fund.index)        # 0% cash back then
+    high_cash = pd.Series(100 * 1.05 ** (np.arange(len(fund)) / 252), index=fund.index)      # 5% cash back then
+    etf = U.loc["EUNL.DE"].to_dict()
+    low = model.estimate(fund, fund, etf, 0.02, S, cash_history=era_cash)
+    high = model.estimate(fund, fund, etf, 0.02, S, cash_history=high_cash)
+    assert high.expected_return < low.expected_return      # same past return, less impressive when cash paid more
+    assert low.capm_return == high.capm_return
+
+
+def test_estimation_uncertainty_widens_long_horizons():
+    est = model.estimate(gbm(0.07, 0.15), gbm(0.07, 0.15), U.loc["EUNL.DE"].to_dict(), 0.02, S)
+    assert 0.005 < est.mean_uncertainty < 0.015
+    certain = model.Estimate(**{**est.to_dict(), "mean_uncertainty": 0.0})
+    assert model.log_moments(est, 30, S)[1] > model.log_moments(certain, 30, S)[1] * 1.1
+    assert model.log_moments(est, 0.25, S)[1] == pytest.approx(model.log_moments(certain, 0.25, S)[1], rel=0.01)

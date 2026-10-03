@@ -4,7 +4,7 @@ VWCE.DE,IE00BK5BQT80,Vanguard FTSE All-World (Acc),Broad world,equity,equity,0.0
 SXR8.DE,IE00B5BMR087,iShares Core S&P 500 (Acc),USA,equity,equity,0.0007,0.0005,0,us,The 500 largest US companies. Very cheap and very liquid.
 SXRV.DE,IE00B53SZB19,iShares Nasdaq 100 (Acc),USA,equity,equity,0.0033,0.0010,0,us;tech,"The 100 largest non-financial Nasdaq companies — heavy in big tech (Apple, Microsoft, Nvidia)."
 IS3N.DE,IE00BKM4GZ66,iShares Core MSCI EM IMI (Acc),Emerging markets,equity,equity,0.0018,0.0010,0,em,"Companies from emerging economies such as China, India, Taiwan and Brazil."
-SMEA.DE,IE00B4K48X80,iShares Core MSCI Europe (Acc),Europe,equity,equity,0.0012,0.0010,0,europe,About 400 large and mid-sized European companies.
+EUNK.DE,IE00B4K48X80,iShares Core MSCI Europe (Acc),Europe,equity,equity,0.0012,0.0010,0,europe,About 400 large and mid-sized European companies.
 EXS1.DE,DE0005933931,iShares Core DAX (DE),Europe,equity,equity,0.0016,0.0008,0,europe;germany,The 40 largest German companies.
 EXW1.DE,DE0005933956,iShares Core EURO STOXX 50 (DE),Europe,equity,equity,0.0010,0.0008,1,europe,The 50 largest companies in the eurozone.
 IUSN.DE,IE00BF4RFH31,iShares MSCI World Small Cap (Acc),Factor / style,equity,equity,0.0035,0.0015,0,world;smallcap,"Thousands of smaller companies across developed countries — a diversifier next to big-company funds."

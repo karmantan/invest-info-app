@@ -21,7 +21,7 @@ def map_holdings(holdings: pd.DataFrame, crypto: pd.DataFrame | None, resolver, 
     rows = []
     for _, h in holdings.iterrows():
         rows.append({"name": h.security_name or h["isin"], "isin": h["isin"], "kind": holding_kind(h.security_name, h["isin"]), "quantity": h.quantity,
-                     "statement_value": float(h.market_value_eur or 0), "symbol": resolver.resolve(h["isin"])})
+                     "statement_value": float(h.market_value_eur or 0), "symbol": resolver.resolve(h["isin"], h.security_name)})
     for _, c in (crypto if crypto is not None else pd.DataFrame()).iterrows():
         rows.append({"name": c["name"] or c.symbol, "isin": None, "kind": "Crypto", "quantity": c.quantity,
                      "statement_value": float(c.market_value_eur or 0), "symbol": crypto_symbols.get(str(c.symbol or "").upper())})
@@ -134,9 +134,10 @@ def portfolio_series(values: pd.DataFrame) -> pd.Series:
     return 1 + buy_and_hold_return(values, values.index[0])
 
 
-def correlation(a: pd.Series, b: pd.Series, min_months: int = 24) -> float | None:
+def correlation(a: pd.Series, b: pd.Series, min_months: int = 24, max_months: int = 60) -> float | None:
+    """Correlation of monthly returns over the most recent `max_months` (older history reflects a different mix)."""
     if a is None or b is None or not len(a) or not len(b): return None
-    both = pd.concat([monthly_returns(a), monthly_returns(b)], axis=1, join="inner").dropna()
+    both = pd.concat([monthly_returns(a), monthly_returns(b)], axis=1, join="inner").dropna().tail(max_months)
     if len(both) < min_months: return None
     return float(both.corr().iloc[0, 1])
 

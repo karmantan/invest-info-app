@@ -4,8 +4,9 @@ Building blocks (all standard and deliberately simple):
 
 * **CAPM anchor** – expected return = cash rate + beta × equity risk premium − fund cost.
   Beta is measured against MSCI World and shrunk toward its asset-class prior (Blume).
-* **Own history, shrunk** – the fund's historical return gets weight
-  years / (years + K), so a short or lucky history cannot dominate.
+* **Own history, shrunk** – the fund's historical return above cash (over the same years)
+  gets a Bayesian weight years / (years + (vol / tau)^2), so a short, noisy or lucky
+  history cannot dominate; the remaining estimation error widens long-horizon ranges.
 * **Trend tilt** – 12-1 month time-series momentum (Moskowitz, Ooi & Pedersen 2012),
   capped and fading over ~6 months, so it only matters for short horizons.
 * **Volatility term structure** – today's EWMA volatility (RiskMetrics) fades back
@@ -47,6 +48,7 @@ class Estimate:
     rf: float
     last_price: float
     last_date: str
+    mean_uncertainty: float = 0.0   # standard error of the expected return itself (per year)
 
     def to_dict(self) -> dict: return asdict(self)
 
@@ -66,7 +68,16 @@ def risk_free_rate(cash_prices: pd.Series | None, fallback: float, ter: float = 
     return float(np.clip(annual, 0.0, 0.08)) if np.isfinite(annual) else fallback
 
 
-def estimate(prices: pd.Series, market: pd.Series | None, etf: dict, rf: float, settings: dict) -> Estimate:
+def _cash_return_over(cash: pd.Series | None, start: pd.Timestamp, end: pd.Timestamp, ter: float = 0.001) -> float | None:
+    """Yearly return of the overnight-rate ETF over a window: what plain cash earned back then."""
+    if cash is None: return None
+    c = cash.dropna(); c = c[(c.index >= start) & (c.index <= end)]
+    if len(c) < 60: return None
+    days = (c.index[-1] - c.index[0]).days
+    return float((c.iloc[-1] / c.iloc[0]) ** (365.25 / days) - 1 + ter) if days > 0 else None
+
+
+def estimate(prices: pd.Series, market: pd.Series | None, etf: dict, rf: float, settings: dict, cash_history: pd.Series | None = None) -> Estimate:
     m = settings["model"]
     s = prices.dropna().astype(float)
     s = s[s > 0]
@@ -92,12 +103,20 @@ def estimate(prices: pd.Series, market: pd.Series | None, etf: dict, rf: float, 
     capm = rf + beta * m["equity_risk_premium"] - etf["ter"]
 
     history = float(math.exp(monthly.mean() * 12 + vol_long ** 2 / 2) - 1) if len(monthly) >= 12 else None
-    if asset == "money" or history is None: weight = 0.0
+    # Judge history by its return *above cash over the same years* (rates were near zero for much of
+    # 2009-2021), then shrink that toward the CAPM premium. Bayesian weight: the prior says a fund's true
+    # edge is uncertain by about `prior_alpha_uncertainty` a year; the history's own noise is vol / sqrt(years).
+    tau = m.get("prior_alpha_uncertainty", 0.015)
+    if asset == "money" or history is None:
+        weight, uncertainty = 0.0, 0.002
+        expected = capm
     else:
-        # Bayesian shrinkage: the noisier the fund, the more years of history it takes to be believed.
-        k = m.get("shrinkage_years", 20) * (vol_long / 0.15) ** 2
+        k = (vol_long / tau) ** 2
         weight = years / (years + k)
-    expected = weight * history + (1 - weight) * capm if history is not None else capm
+        uncertainty = math.sqrt(1 / (1 / tau ** 2 + years / vol_long ** 2))
+        past_cash = _cash_return_over(cash_history, s.index[0], s.index[-1])
+        history_excess = history - (past_cash if past_cash is not None else rf)
+        expected = rf + weight * history_excess + (1 - weight) * (capm - rf)
 
     signal = 0.0
     if asset != "money" and len(s) > TRADING_DAYS:
@@ -117,7 +136,7 @@ def estimate(prices: pd.Series, market: pd.Series | None, etf: dict, rf: float, 
         history_years=float(years), history_weight=float(weight), beta=float(beta), vol_long=vol_long, vol_now=vol_now,
         momentum_signal=signal, momentum_tilt=float(tilt), trend_up=bool(s.iloc[-1] >= s.iloc[-200:].mean()),
         drawdown_1y=float(s.iloc[-1] / last_year.max() - 1), dividend_tax_drag=float(drag), rf=float(rf),
-        last_price=float(s.iloc[-1]), last_date=str(s.index[-1].date()))
+        last_price=float(s.iloc[-1]), last_date=str(s.index[-1].date()), mean_uncertainty=float(uncertainty))
 
 
 def log_moments(est: Estimate, years: float, settings: dict) -> tuple[float, float]:
@@ -126,6 +145,8 @@ def log_moments(est: Estimate, years: float, settings: dict) -> tuple[float, flo
     a_m = tau * (1 - math.exp(-years / tau)); a_v = tau_v * (1 - math.exp(-years / tau_v))
     log_expected = years * math.log1p(est.expected_return - est.dividend_tax_drag) + est.momentum_tilt * a_m
     variance = est.vol_now ** 2 * a_v + est.vol_long ** 2 * max(0.0, years - a_v)
+    # The expected return is itself an estimate; its error compounds with time (predictive distribution).
+    variance += (est.mean_uncertainty * years) ** 2
     return log_expected - variance / 2, math.sqrt(max(variance, 1e-12))
 
 
@@ -172,7 +193,9 @@ def savings_plan(monthly: float, years: float, est: Estimate, etf: dict, setting
     drift = math.log1p(est.expected_return - est.dividend_tax_drag) + est.momentum_tilt * np.exp(-t / tau)
     var = est.vol_long ** 2 + (est.vol_now ** 2 - est.vol_long ** 2) * np.exp(-t / tau_v)
     shocks = rng.standard_normal((paths, months))
-    log_r = drift / 12 - var / 24 + np.sqrt(var / 12) * shocks
+    # Each path draws its own long-run return, reflecting that the expected return is uncertain.
+    drift_error = est.mean_uncertainty * rng.standard_normal((paths, 1))
+    log_r = (drift + drift_error) / 12 - var / 24 - est.mean_uncertainty ** 2 * t / 12 + np.sqrt(var / 12) * shocks
     value = np.zeros(paths); rows = [{"years": 0.0, "paid_in": 0.0, "p10": 0.0, "p50": 0.0, "p90": 0.0, "mean": 0.0}]
     step = max(1, months // 120)
     for i in range(months):
